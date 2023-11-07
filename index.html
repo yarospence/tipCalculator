@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <title>Tip Calculator</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--this is the google api for the font were using-->
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+<!--lets get to building a Tip Calculator-->
+    <div class="wrapper">
+      <div class="container" id="topContainer">
+        <div class="title">Bill total</div>
+<!--create an input for the Bill total-->
+        <div class="inputContainer">
+          <span>$</span>
+          <input
+            onkeyup="calculateBill()"
+            type="text"
+            id="billTotalInput"
+            placeholder="Insert amount here"
+          />
+        </div>
+      </div>
+<!--create an input for the Tip Balance-->
+      <div class="container">
+        <div class="title">Tip</div>
+        <div class="inputContainer">
+          <span>%</span>
+          <input
+            onkeyup="calculateBill()"
+            type="text"
+            id="tipInput"
+            placeholder="10"
+        </div>
+      </div>
+<!--now we need to add people for tip-->
+      <div class="container" id="bottom">
+        <div class="splitContainer">
+          <div class="title">People</div>
+<!--now we make controls for the user-->
+          <div class="controls">
+<!--first we make a way to increase people-->
+            <span class="buttonContainer">
+<!--when the user clicks the + button, onclick function will occur-->
+              <button class="splitButton" onclick="increasePeople()">
+                <span class="buttonTExt">+</span>
+              </button>
+            </span>
+<!--now we need to make a counter of people-->
+            <span class="splitAmount" id="numberOfPeople">1</span>
+<!--third we make a way to decrease people-->
+            <span class="buttonContainer">
+<!--when the user clicks the - button, onclick function will occur-->
+              <button class="splitButton" onclick="decreasePeople()">
+              <span class="buttonText">-</span>
+              </button>
+            </span>
+          </div>
+        </div>
+        <div class="totalContainer">
+          <div class="title">Total per Person</div>
+          <div class="title" id="perPersonTotal">$0.00</div>
+        </div>
+      </div>
+    </div>
+
+<!--finally we link the html to javascript-->
+<!--remember div and class is how we identify them-->
+<!--identify to color certain parts-->
+    <script src="index.js" type="text/javascript"></script>
+  </body>
+</html>
